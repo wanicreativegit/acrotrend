@@ -1,0 +1,171 @@
+.share{
+
+  width:100%;
+  height:70px;
+  position: absolute;
+  bottom:70px;
+  background-color: rgba(#00587c, .4);
+  background-image: url('./img/share.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  @include transition(all .3s ease-in-out);
+  display: none;
+  @include for-size(tablet-landscape-up){
+    display: block;
+  }
+  @media screen and (max-height:1200px){
+    &:hover{
+      cursor: pointer;
+      background-color: #00587c;
+      .links{
+        visibility: visible;
+        transform: translateX(10px);
+        div{
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  &.active{
+    cursor: pointer;
+    background-color: #00587c;
+    .links{
+      visibility: visible;
+      transform: translateX(10px);
+      div{
+        transform: scale(1);
+      }
+    }
+  }
+
+  .links{
+    position:absolute;
+    left:90px;
+    visibility: hidden;
+    height: 100%;
+    background-color: color('blue-transparent');
+    max-width: 400px;
+    display: table;
+    width: 400px;
+    table-layout: fixed;
+
+    @include transition(all .1s linear);
+    div{
+      width:90px;
+      height: 70px;
+      background-repeat: no-repeat;
+      background-position: center;
+      float:left;
+      @include transition(all .3s ease-in-out);
+      transform: scale(0);
+      &.fb{
+        background-image: url(./img/soc/facebook.svg);
+        &:hover{
+          background-image: url(./img/soc/facebook-active.svg);
+        }
+      }
+      &.tw{
+        background-image: url(./img/soc/twitter.svg);
+        &:hover{
+          background-image: url(./img/soc/twitter-active.svg);
+        }
+      }
+      &.ln{
+        background-image: url(./img/soc/linkedin.svg);
+        &:hover{
+          background-image: url(./img/soc/linkedin-active.svg);
+        }
+      }
+      &.you{
+        background-image: url(./img/soc/youtube.svg);
+        &:hover{
+          background-image: url(./img/soc/youtube-active.svg);
+        }
+      }
+
+    }
+  }
+
+}
+
+.contacts{
+  width:100%;
+  height:70px;
+  position: absolute;
+  bottom:0;
+  background-color: color('orange');
+  background-image: url('./img/contacts-.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  @include transition(all .3s ease-in-out);
+  display: none;
+  @include for-size(tablet-landscape-up){
+    display: block;
+  }
+  @media screen and (max-height:1200px){
+    &:hover{
+      cursor: pointer;
+      .links{
+        visibility: visible;
+        transform: translateX(20px);
+        div{
+          transform: scale(1);
+        }
+      }
+    }
+  }
+  &.active{
+    cursor: pointer;
+    .links{
+      visibility: visible;
+      transform: translateX(20px);
+      div{
+        transform: scale(1);
+      }
+    }
+  }
+
+  .links{
+    position:absolute;
+    left:80px;
+    visibility: hidden;
+    width:400px;
+    display: inline-flex;
+    height: 100%;
+    background-color: #bc7b40;
+    @include transition(all .1s linear);
+
+    div{
+      padding: 22px 50px;
+      width:auto;
+      transform: scale(0);
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      float:left;
+      @include transition(all .3s ease-in-out);
+      a{
+        @include museo500;
+        @include font-size(20px);
+        color:#fff;
+      }
+      .email{
+        height: 70px;
+        position: absolute;
+        width: 70px;
+        background: color('orange-dark');
+        top: 0;
+        right: -65px;
+        &:after{
+          position: absolute;
+          content: "+";
+          @include font-size(40px);
+          width: 70px;
+          top: calc(10%);
+          text-align: center;
+        }
+      }
+    }
+  }
+}

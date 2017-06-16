@@ -1,0 +1,44 @@
+.plus-minus-toggle {
+  cursor: pointer;
+  height: 30px;
+  margin: auto;
+  top: 50%;
+  position: absolute;
+  width: 30px;
+  margin-top: -15px;
+  left: 50%;
+  margin-left: -15px;
+  &:before,
+  &:after{
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 30px;
+    transition: transform 500ms ease;
+  }
+  &:after {
+    transform-origin: center;
+    transform: rotate(45deg);
+    background: #2e6f88;
+  }
+  &:before{
+    transform: rotate(-45deg);
+    background: #2e6f88;
+  }
+  &.collapsed {
+    &:after {
+      transform: rotate(90deg);
+      background: #ffffff;
+    }
+    &:before {
+      transform: rotate(180deg);
+      background: #ffffff;
+    }
+  }
+  display: none;
+  @include for-size(tablet-landscape-up){
+    display: block;
+  }
+}

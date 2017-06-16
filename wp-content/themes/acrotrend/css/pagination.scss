@@ -1,0 +1,31 @@
+.wp-pagenavi{
+  padding:0 30px;
+  position: relative;
+  .current{
+    display: none;
+  }
+  .pages{
+    padding:20px 30px;
+    border: 1px solid #006e9b;
+    color:#006e9b;
+    @include museo500;
+  }
+  .nextpostslink, .previouspostslink{
+    padding:20px 40px;
+    border: 1px solid #006e9b;
+    color:#006e9b;
+    @include museo500;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    a{
+      color:#006e9b;
+      &:hover{
+        color:#006e9b;
+      }
+    }
+  }
+}

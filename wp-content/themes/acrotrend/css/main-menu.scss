@@ -1,0 +1,54 @@
+.main-menu{
+
+  position:fixed;
+  height:100%;
+  top:0;
+  display: none;
+  align-items: center;
+  padding-left:100px;
+  background-color:rgba(#000000, .65);
+  @include transition(all .3s ease-in-out);
+  @include for-size(phone-only){
+    padding-left: 0;
+    background-color:rgba(#000000, .95);
+    width:100%;
+  }
+
+  @media screen and (max-height:450px){
+    background-color:rgba(#000000, .85);
+  }
+
+  &.active{
+    display: flex;
+  }
+
+  ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+    @include for-size(phone-only){
+      margin: 0 auto !important;
+    }
+
+    li{
+      padding: 20px 0;
+      text-align:center;
+      @include for-size(phone-only){
+        padding: 10px 0;
+      }
+      @media screen and (max-height:450px){
+        padding:10px 0;
+      }
+      a{
+        padding: 30px 150px;
+        color:#fff;
+        text-transform: uppercase;
+        @include font-size(20px);
+        @include lato;
+        @include for-size(phone-only){
+          padding: 30px 50px;
+        }
+      }
+    }
+  }
+}
